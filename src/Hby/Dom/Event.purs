@@ -11,6 +11,6 @@ data ClickEventData
 -- getValue
 foreign import getValue_changeEvent :: ChangeEventData -> String
 
-instance changeEventGetValue :: GetValue ChangeEventData where
+instance getValue_ChangeEventData :: GetValue ChangeEventData where
   getValue :: ChangeEventData -> String
   getValue = getValue_changeEvent

@@ -12,7 +12,7 @@ foreign import data Element :: Type
 _showElement :: Element -> String
 _showElement _ = "这是一个dom对象"
 
-instance showElement :: Show Element where
+instance show_Element :: Show Element where
   show a = _showElement a
 
 -- getElementById
