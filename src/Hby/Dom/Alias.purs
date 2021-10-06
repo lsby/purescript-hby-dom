@@ -1,4 +1,4 @@
-module Hby.DOM.Alias where
+module Hby.Dom.Alias where
 
 type Html
   = String

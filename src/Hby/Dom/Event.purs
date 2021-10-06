@@ -1,6 +1,6 @@
-module Hby.DOM.Event where
+module Hby.Dom.Event where
 
-import Hby.DOM.Class (class GetValue)
+import Hby.Dom.Class (class GetValue)
 
 data ChangeEventData
   = ChangeEventData

@@ -1,10 +1,10 @@
-module Hby.DOM.Element where
+module Hby.Dom.Element where
 
 import Prelude
 import Data.Either (Either(..))
 import Effect (Effect)
-import Hby.DOM.Alias (Html, Id, Value)
-import Hby.DOM.Event (ChangeEventData, ClickEventData)
+import Hby.Dom.Alias (Html, Id, Value)
+import Hby.Dom.Event (ChangeEventData, ClickEventData)
 
 foreign import data Element :: Type
 

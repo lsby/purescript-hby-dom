@@ -1,4 +1,4 @@
-module Hby.DOM.Dom where
+module Hby.Dom.Dom where
 
 import Prelude
 import Effect (Effect)
