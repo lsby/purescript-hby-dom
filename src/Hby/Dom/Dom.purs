@@ -8,3 +8,6 @@ foreign import onLoad :: forall a. Effect a -> Effect Unit
 
 -- setBodyHtml
 foreign import setBodyHtml :: String -> Effect Unit
+
+-- openUrl
+foreign import openUrl :: String -> Effect Unit

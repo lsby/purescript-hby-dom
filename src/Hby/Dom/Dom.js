@@ -11,3 +11,6 @@ exports.onLoad = function (action) {
 exports.setBodyHtml = (html) => () => {
     document.body.innerHTML = html
 }
+exports.openUrl = (url) => () => {
+    window.open(url)
+}

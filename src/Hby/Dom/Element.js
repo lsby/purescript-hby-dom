@@ -29,3 +29,12 @@ exports.onChange = (t) => (f) => () => {
         return f(e)()
     })
 }
+exports._getElementStrAttr = (left) => (right) => (e) => (attrName) => () => {
+    if (e[attrName] == null) {
+        return left('属性不存在')
+    }
+    if (typeof e[attrName] != 'string') {
+        return left('属性不是字符串')
+    }
+    return right(e[attrName])
+}

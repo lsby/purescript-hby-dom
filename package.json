@@ -1,0 +1,30 @@
+{
+    "name": "purescript-hby-dom",
+    "version": "0.0.1",
+    "description": "",
+    "main": "gulpfile.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "gulp test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lsby/purescript-hby-dom.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@lsby/exec_cmd": "^0.0.11",
+        "better-opn": "^3.0.0",
+        "gulp": "^4.0.2",
+        "parcel": "^2.0.0-rc.0",
+        "spago": "^0.20.3"
+    },
+    "bugs": {
+        "url": "https://github.com/lsby/purescript-hby-dom/issues"
+    },
+    "homepage": "https://github.com/lsby/purescript-hby-dom#readme"
+}

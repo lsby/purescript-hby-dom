@@ -52,3 +52,14 @@ foreign import onClick :: Element -> (ClickEventData -> Effect Unit) -> Effect U
 
 -- setOnChange
 foreign import onChange :: Element -> (ChangeEventData -> Effect Unit) -> Effect Unit
+
+-- getElementStrAttr
+foreign import _getElementStrAttr ::
+  (String -> Either String String) ->
+  (String -> Either String String) ->
+  Element ->
+  String ->
+  Effect (Either String String)
+
+getElementStrAttr :: Element -> String -> Effect (Either String String)
+getElementStrAttr = _getElementStrAttr Left Right
