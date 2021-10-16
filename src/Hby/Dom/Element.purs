@@ -5,6 +5,7 @@ import Data.Either (Either(..))
 import Effect (Effect)
 import Hby.Dom.Alias (Html, Id, Value)
 import Hby.Dom.Event (ChangeEventData, ClickEventData)
+import Hby.EEffect (EEffect(..))
 
 foreign import data Element :: Type
 
@@ -22,8 +23,8 @@ foreign import _getElementById ::
   String ->
   Effect (Either String Element)
 
-getElementById :: String -> Effect (Either String Element)
-getElementById id = _getElementById Left Right id
+getElementById :: String -> EEffect Element
+getElementById id = EEffect $ _getElementById Left Right id
 
 -- setValueById
 foreign import _setValueById ::
@@ -33,8 +34,8 @@ foreign import _setValueById ::
   String ->
   Effect (Either String Unit)
 
-setValueById :: Id -> Value -> Effect (Either String Unit)
-setValueById id value = _setValueById Left Right id value
+setValueById :: Id -> Value -> EEffect Unit
+setValueById id value = EEffect $ _setValueById Left Right id value
 
 -- setHtmlById
 foreign import _setHtmlById ::
@@ -44,8 +45,8 @@ foreign import _setHtmlById ::
   String ->
   Effect (Either String Unit)
 
-setHtmlById :: Id -> Html -> Effect (Either String Unit)
-setHtmlById id html = _setHtmlById Left Right id html
+setHtmlById :: Id -> Html -> EEffect Unit
+setHtmlById id html = EEffect $ _setHtmlById Left Right id html
 
 -- setOnClick
 foreign import onClick :: Element -> (ClickEventData -> Effect Unit) -> Effect Unit
@@ -61,5 +62,5 @@ foreign import _getElementStrAttr ::
   String ->
   Effect (Either String String)
 
-getElementStrAttr :: Element -> String -> Effect (Either String String)
-getElementStrAttr = _getElementStrAttr Left Right
+getElementStrAttr :: Element -> String -> EEffect String
+getElementStrAttr e attr = EEffect $ _getElementStrAttr Left Right e attr

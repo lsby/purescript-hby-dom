@@ -3,3 +3,16 @@ let upstream =
       /\  https://github.com/lsby/purescript-my-upstream/releases/download/1633817302/packages.dhall sha256:035f15b493a4fee35ba8664c98c47e281d051838a5a3984f9ba20ebf7bc391a8
 
 in  upstream
+  with hby-eeffect =
+      { dependencies =
+          [ "console"
+          , "effect"
+          , "either"
+          , "prelude"
+          , "psci-support"
+          ]
+      , repo =
+          "https://github.com/lsby/purescript-hby-eeffect"
+      , version =
+          "v0.0.2"
+      }
