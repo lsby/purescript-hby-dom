@@ -1,10 +1,12 @@
 module Test.Main where
 
 import Prelude
+import Data.Either (Either(..))
 import Effect (Effect)
+import Effect.Class.Console (log)
+import Effect.Exception (message, try)
 import Hby.Dom.Dom (onLoad, openUrl, setBodyHtml)
 import Hby.Dom.Element (getElementById, getElementStrAttr, onClick, setHtmlById)
-import Hby.EEffect (toEEffect, toEffectUnit)
 import Text.Smolder.HTML (button, span)
 import Text.Smolder.HTML (div, input) as S
 import Text.Smolder.HTML.Attributes (id, value)
@@ -26,15 +28,22 @@ initHtml =
           $ do
               button ! id "openBut" $ text "测试打开网页"
 
+safeEffect :: Effect Unit -> Effect Unit
+safeEffect e = do
+  c <- try e
+  case c of
+    Left err -> log $ message err
+    Right _ -> e
+
 main :: Effect Unit
 main =
   onLoad
-    $ toEffectUnit do
-        toEEffect $ setBodyHtml $ render initHtml
-        -- 
+    $ safeEffect do
+        setBodyHtml $ render initHtml
+        --
         a1 <- getElementById "a1"
         v <- getElementStrAttr a1 "value"
         setHtmlById "b2" v
-        -- 
+        --
         openBut <- getElementById "openBut"
-        toEEffect $ onClick openBut (\_ -> openUrl "http://www.google.com")
+        onClick openBut (\_ -> openUrl "http://www.google.com")

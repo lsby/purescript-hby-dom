@@ -2,12 +2,11 @@
 , dependencies =
   [ "console"
   , "effect"
+  , "either"
+  , "exceptions"
   , "prelude"
   , "psci-support"
-  , "either"
   , "smolder"
-  , "foldable-traversable"
-  , "hby-eeffect"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
