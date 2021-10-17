@@ -23,6 +23,9 @@ foreign import setValueById :: Id -> Value -> Effect Unit
 -- setHtmlById
 foreign import setHtmlById :: Id -> Html -> Effect Unit
 
+-- setHtml
+foreign import setHtml :: Element -> String -> Effect Unit
+
 -- getElementStrAttr
 foreign import getElementStrAttr :: Element -> String -> Effect String
 

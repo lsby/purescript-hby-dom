@@ -21,6 +21,9 @@ exports.setHtmlById = (id) => (html) => () => {
     }
     r.innerHTML = html
 }
+exports.setHtml = (ele) => (h) => () => {
+    ele.innerHTML = h
+}
 
 exports.getElementStrAttr = (e) => (attrName) => () => {
     if (e[attrName] == null) {
