@@ -6,6 +6,12 @@ exports.getElementById = (id) => () => {
     return r
 }
 
+exports.setValue = (ele) => (value) => () => {
+    if (ele.value == null) {
+        throw new Error('没有value属性: ' + ele)
+    }
+    ele.value = value
+}
 exports.setValueById = (id) => (value) => () => {
     var r = document.getElementById(id)
     if (r == null) {

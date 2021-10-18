@@ -17,20 +17,20 @@ instance show_Element :: Show Element where
 -- getElementById
 foreign import getElementById :: String -> Effect Element
 
--- setValueById
-foreign import setValueById :: Id -> Value -> Effect Unit
-
--- setHtmlById
-foreign import setHtmlById :: Id -> Html -> Effect Unit
-
--- setHtml
-foreign import setHtml :: Element -> String -> Effect Unit
-
 -- getElementStrAttr
 foreign import getElementStrAttr :: Element -> String -> Effect String
 
--- setOnClick
+-- setValueById
+foreign import setValue :: Element -> Value -> Effect Unit
+
+foreign import setValueById :: Id -> Value -> Effect Unit
+
+-- setHtml
+foreign import setHtml :: Element -> Html -> Effect Unit
+
+foreign import setHtmlById :: Id -> Html -> Effect Unit
+
+-- setOn
 foreign import onClick :: Element -> (ClickEventData -> Effect Unit) -> Effect Unit
 
--- setOnChange
 foreign import onChange :: Element -> (ChangeEventData -> Effect Unit) -> Effect Unit
