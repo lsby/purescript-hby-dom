@@ -20,7 +20,7 @@ foreign import getElementById :: String -> Effect Element
 -- getElementStrAttr
 foreign import getElementStrAttr :: Element -> String -> Effect String
 
--- setValueById
+-- setValue
 foreign import setValue :: Element -> Value -> Effect Unit
 
 foreign import setValueById :: Id -> Value -> Effect Unit
