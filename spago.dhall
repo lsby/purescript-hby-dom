@@ -2,11 +2,8 @@
 , dependencies =
   [ "console"
   , "effect"
-  , "either"
-  , "exceptions"
+  , "hby-task"
   , "prelude"
-  , "psci-support"
-  , "smolder"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]

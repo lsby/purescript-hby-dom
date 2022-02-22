@@ -1,16 +1,8 @@
 module Hby.Dom.Event where
 
-import Hby.Dom.Class (class GetValue)
+import Prelude
+import Hby.Task (Task)
 
-data ChangeEventData
-  = ChangeEventData
+foreign import onResize :: Task Unit -> Task Unit
 
-data ClickEventData
-  = ClickEventData
-
--- getValue
-foreign import getValue_changeEvent :: ChangeEventData -> String
-
-instance getValue_ChangeEventData :: GetValue ChangeEventData where
-  getValue :: ChangeEventData -> String
-  getValue = getValue_changeEvent
+foreign import onDOMContentLoaded :: Task Unit -> Task Unit
